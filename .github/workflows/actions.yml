@@ -11,7 +11,13 @@ jobs:
       - name: List Files
         run: | 
           pwd
-          ls
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+          # git clone git@github:$GITUHB_REPOSITORY
+          # git checkout @GITHUB_SHA
       - name: Simple JS Actions
         id: greet
         uses: "actions/hello-world-javascript-action@v1"
